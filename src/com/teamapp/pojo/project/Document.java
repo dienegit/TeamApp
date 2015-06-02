@@ -1,7 +1,6 @@
 package com.teamapp.pojo.project;
 
 import java.util.Date;
-import java.util.List;
 
 import com.teamapp.pojo.user.User;
 
