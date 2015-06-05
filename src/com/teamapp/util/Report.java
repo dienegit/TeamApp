@@ -1,5 +1,5 @@
 package com.teamapp.util;
 
-public class Report {
+public class Report{
 
 }

@@ -10,6 +10,8 @@ public class Notification {
 	private String url;
 	
 	private Date time;
+	
+	private boolean isRead;
 
 	public int getId() {
 		return id;
@@ -42,5 +44,15 @@ public class Notification {
 	public void setTime(Date time) {
 		this.time = time;
 	}
+
+	public boolean isRead() {
+		return isRead;
+	}
+
+	public void setRead(boolean isRead) {
+		this.isRead = isRead;
+	}
+	
+	
 	
 }

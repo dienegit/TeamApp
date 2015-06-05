@@ -21,6 +21,8 @@ public class PTask {
 	private Date completedTime;
 
 	private List<User> member;
+	
+	private int priority;
 
 	public int getId() {
 		return id;
@@ -85,5 +87,14 @@ public class PTask {
 	public void setMember(List<User> member) {
 		this.member = member;
 	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+	
 
 }
