@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<!-- 最接近惯例的映射方式 -->
+<hibernate-mapping package="com.teamapp.pojo.user">
+	<class name="User" table="user">
+		<id name="id" column="user_id">
+ 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
+	 	</id>
+	 	<property name="name" column="user_name" length="50" type="string" not-null="true" />
+	 	<!-- <property name="email" column="user_email" length="50" type="string" unique="true" not-null="true"/>
+	 	<property name="userName" column="user_username" length="50" type="string" not-null="true"/>
+	 	<property name="userMotto" column="user_usermotto" length="50" type="string" />
+	 	<property name="userPhoto" column="user_userphoto" length="50" type="string" />
+	 	<property name="userRegisterDate" column="user_registerdate" length="50" type="string" /> -->
+		<!--1 to N relation  -->
+	 	<!-- <set name="friends" table="user_friends" lazy="true" >
+	 		foreign key
+	 		<key column="user_id" />
+	 		<many-to-many class="User" column="friends_id" unique="true" />
+	 	</set> -->
+	</class>
+</hibernate-mapping>
