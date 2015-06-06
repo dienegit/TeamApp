@@ -1,5 +1,8 @@
 package com.teamapp.dao.user;
 
-public interface IUserDao {
+import com.teamapp.dao.IBasicDao;
+import com.teamapp.pojo.user.User;
 
+public interface IUserDao extends IBasicDao<User>{
+	
 }
