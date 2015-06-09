@@ -9,7 +9,7 @@
 <body>
 	<a href="add">add</a><br />
 	<c:forEach items="${users }" var="um">
-    	${um.value.username }    ${um.value.password }    ${um.value.email }<br />
+    	${um.id }    ${um.name }<br />
 
 	</c:forEach>
 </body>

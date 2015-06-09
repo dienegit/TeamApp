@@ -25,4 +25,6 @@ public interface IUserService extends IBaseService<User>{
 	List<PTask> getAllCompletedTasks(User user);
 	
 	List<PTask> getAllTodoTasks(User user);
+	
+	List<User> getAllUsers();
 }

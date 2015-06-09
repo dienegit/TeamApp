@@ -16,7 +16,7 @@
           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
 	<!-- 1.load database config file -->
-	<context:property-placeholder location="/WEB-INF/jdbc.properties" />
+	<context:property-placeholder location="classpath:jdbc.properties" />
 	<!-- 2.Hibernate config -->
 	<!-- data source -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -51,10 +51,6 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/teamapp/pojo/user/User.hbm.xml</value>
-				<!-- <value>com/summerless/app/model/User.hbm.xml</value> -->
-				<!-- <value>com/summerless/app/pojo/tag/Tag.hbm.xml</value> <value>com/summerless/app/pojo/user/User.hbm.xml</value> 
-					<value>com/summerless/app/pojo/document/Document.hbm.xml</value> <value>com/summerless/app/pojo/category/Category.hbm.xml</value> 
-					<value>com/summerless/app/pojo/comment/Comment.hbm.xml</value> -->
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -74,25 +70,12 @@
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<!-- 4. Configure Data access object -->
-	<bean id="userDao" class="com.teamapp.dao.impl.user.UserDao">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+	<!-- 4. Auto scan and define bean -->
+	<context:component-scan base-package="com.teamapp"></context:component-scan>
 	
-	<!-- <bean id="testDao" class="com.summerless.app.dao.impl.hibernate.TestDao"> 
-		<property name="sessFactory" ref="sessionFactory" /> </bean> <bean id="userService" 
-		class="com.summerless.app.service.impl.UserService"> <property name="userDao" 
-		ref="testDao" /> </bean> -->
-	<!-- <bean id="categoryDao" class="com.summerless.app.daoimpl.hibernate.category.CategoryDao"> 
-		<property name="sessFactory" ref="sessionFactory" /> </bean> <bean id="commentDao" 
-		class="com.summerless.app.daoimpl.hibernate.comment.CommentDao"> <property 
-		name="sessFactory" ref="sessionFactory" /> </bean> <bean id="blogDao" class="com.summerless.app.daoimpl.hibernate.document.blog.BlogDao"> 
-		<property name="sessFactory" ref="sessionFactory" /> </bean> <bean id="notepadDao" 
-		class="com.summerless.app.daoimpl.hibernate.document.notepad.NotepadDao"> 
-		<property name="sessFactory" ref="sessionFactory" /> </bean> <bean id="tagDao" 
-		class="com.summerless.app.daoimpl.hibernate.tag.TagDao"> <property name="sessFactory" 
-		ref="sessionFactory" /> </bean> <bean id="userDao" class="com.summerless.app.daoimpl.hibernate.user.UserDao"> 
-		<property name="sessFactory" ref="sessionFactory" /> </bean> -->
-
+	<!-- 4. Configure Data access object -->
+	<!-- <bean id="userDao" class="com.teamapp.dao.impl.user.UserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> -->
 
 </beans>

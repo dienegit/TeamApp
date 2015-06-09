@@ -8,9 +8,9 @@
 </head>
 <body>
     <sf:form method="post" modelAttribute="user">
-    	username: <sf:input path="username"/><sf:errors path="username" /><br />
-    	password: <sf:input path="password"/><sf:errors path="password" /><br />
-    	email: <sf:input path="email"/><sf:errors path="email" /><br />
+    	username: <sf:input path="name"/><br />
+    	password: <sf:input path="password"/><br />
+    	email: <sf:input path="email"/><br />
     	<input type="submit" value="add user" />
     </sf:form>
 </body>

@@ -1,1 +1,4 @@
+/applicationContext.xml
+/jdbc.properties
 /com
+/teamapp-servlet.xml
