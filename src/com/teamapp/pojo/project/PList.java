@@ -6,7 +6,7 @@ import java.util.List;
 import com.teamapp.pojo.user.User;
 
 public class PList {
-	private int id;
+	private long id;
 
 	private boolean isComplete;
 
@@ -24,11 +24,11 @@ public class PList {
 
 	private List<PTask> tasks;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

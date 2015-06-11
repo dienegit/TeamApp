@@ -8,7 +8,7 @@ import com.teamapp.util.Report;
 
 public class Project {
 
-	private int id;
+	private long id;
 
 	private boolean isComplete;
 
@@ -40,11 +40,11 @@ public class Project {
 
 	private List<Report> reports;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

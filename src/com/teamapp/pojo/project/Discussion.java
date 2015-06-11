@@ -5,7 +5,7 @@ import java.util.Date;
 import com.teamapp.pojo.user.User;
 
 public class Discussion {
-	private int id;
+	private long id;
 
 	private String content;
 
@@ -13,11 +13,11 @@ public class Discussion {
 
 	private Date createdTime;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

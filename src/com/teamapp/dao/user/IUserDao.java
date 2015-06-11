@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import com.teamapp.dao.IBasicDao;
 import com.teamapp.pojo.user.User;
 
-public interface IUserDao extends IBasicDao<User>{
-	List<User> getAllUsers();
+public interface IUserDao extends IBasicDao<User>{ 
+	
+	
 }

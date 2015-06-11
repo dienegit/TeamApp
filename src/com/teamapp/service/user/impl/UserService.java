@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import com.teamapp.dao.user.IUserDao;
 import com.teamapp.pojo.project.PTask;
 import com.teamapp.pojo.user.User;
-import com.teamapp.service.impl.BaseService;
 import com.teamapp.service.user.IUserService;
 
+
 @Service
-public class UserService extends BaseService<User> implements IUserService {
+public class UserService  implements IUserService {
 	
 	@Resource
 	private IUserDao userDao;
@@ -80,8 +80,14 @@ public class UserService extends BaseService<User> implements IUserService {
 	}
 
 	@Override
+	public List<User> getAllUsers() {
+		return this.userDao.findAll();
+	}
+
+	@Override
 	public void create(User entity) {
 		this.userDao.insert(entity);
+		
 	}
 
 	@Override
@@ -94,11 +100,6 @@ public class UserService extends BaseService<User> implements IUserService {
 	public boolean delete(User entity) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public List<User> getAllUsers() {
-		return this.userDao.getAllUsers();
 	}
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Organization {
 
-	private int id;
+	private long id;
 
 	private String name;
 
@@ -19,11 +19,11 @@ public class Organization {
 
 	private Date createdTime;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

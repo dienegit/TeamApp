@@ -7,7 +7,7 @@ import com.teamapp.pojo.notification.Notification;
 
 public class User {
 
-	private int id;
+	private long id;
 
 	private String name;
 
@@ -29,11 +29,11 @@ public class User {
 
 	private String permission;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
