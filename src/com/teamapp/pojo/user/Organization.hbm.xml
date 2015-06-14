@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<!-- 最接近惯例的映射方式 -->
+<hibernate-mapping package="com.teamapp.pojo.user">
+	<class name="Organization" table="t_organization">
+		<id name="id" column="organization_id">
+ 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
+	 	</id>
+	 	<property name="name" column="organization_name" length="50" type="string" not-null="true" />
+	 	<property name="description" column="organization_description" length="500" type="string" not-null="true" />
+	 	<property name="imgPath" column="organization_img_path" length="100" type="string" not-null="true" />
+	 	<property name="createdTime" column="organization_created_time" length="100" type="date" not-null="true" />
+	 	<!--many to one relation  -->
+	 	<many-to-one name="leader" class="User" column="organization_leader" cascade="all"/>
+	 	
+	</class>
+</hibernate-mapping>

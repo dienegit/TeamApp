@@ -23,9 +23,7 @@ public class User {
 
 	private List<Organization> organizations;
 
-	private List<Notification> commentNotifications;
-
-	private List<Notification> deadlineNotifications;
+	private List<Notification> notifications;
 
 	private String permission;
 
@@ -93,25 +91,16 @@ public class User {
 		this.organizations = organizations;
 	}
 
+	public List<Notification> getNotifications() {
+		return notifications;
+	}
+
+	public void setNotifications(List<Notification> notifications) {
+		this.notifications = notifications;
+	}
+
 	public String getPermission() {
 		return permission;
-	}
-
-	public List<Notification> getCommentNotifications() {
-		return commentNotifications;
-	}
-
-	public void setCommentNotifications(List<Notification> commentNotifications) {
-		this.commentNotifications = commentNotifications;
-	}
-
-	public List<Notification> getDeadlineNotifications() {
-		return deadlineNotifications;
-	}
-
-	public void setDeadlineNotifications(
-			List<Notification> deadlineNotifications) {
-		this.deadlineNotifications = deadlineNotifications;
 	}
 
 	public void setPermission(String permission) {

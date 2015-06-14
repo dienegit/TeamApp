@@ -4,13 +4,15 @@ import java.util.Date;
 
 public class Notification {
 	private long id;
-	
+
 	private String name;
-	
+
+	private String type;
+
 	private String url;
-	
+
 	private Date time;
-	
+
 	private boolean isRead;
 
 	public long getId() {
@@ -29,6 +31,14 @@ public class Notification {
 		this.name = name;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public String getUrl() {
 		return url;
 	}
@@ -45,14 +55,12 @@ public class Notification {
 		this.time = time;
 	}
 
-	public boolean isRead() {
+	public boolean getIsRead() {
 		return isRead;
 	}
 
-	public void setRead(boolean isRead) {
+	public void setIsRead(boolean isRead) {
 		this.isRead = isRead;
 	}
-	
-	
-	
+
 }
