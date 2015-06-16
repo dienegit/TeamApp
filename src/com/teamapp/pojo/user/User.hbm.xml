@@ -21,7 +21,7 @@
 	 		<key column="user_id" />
 	 		<many-to-many class="Organization" column="organization_id" unique="true" />
 	 	</set>
-	 	<!--many to many relation  -->
+	 	<!--one to many relation  -->
 	 	<set name="notifications" table="t_user_notification" >
 	 		<!-- foreign key -->
 	 		<key column="user_id" />

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ import com.teamapp.service.user.IUserService;
 
 @Controller
 @RequestMapping(value="/user")
+@Scope("prototype")
 public class UserController {
 	
 	@Resource

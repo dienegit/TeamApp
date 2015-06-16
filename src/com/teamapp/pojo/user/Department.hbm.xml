@@ -17,7 +17,7 @@
 	 	<set name="members" table="t_department_user" >
 	 		<!-- foreign key -->
 	 		<key column="department_id" />
-	 		<many-to-many class="User" column="user_id" unique="true" />
+	 		<many-to-many class="User" column="user_id"  />
 	 	</set>
 	</class>
 </hibernate-mapping>

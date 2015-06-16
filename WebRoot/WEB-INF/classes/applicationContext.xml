@@ -52,8 +52,8 @@
 			<list>
 				<value>com/teamapp/pojo/user/User.hbm.xml</value>
 				<value>com/teamapp/pojo/user/Organization.hbm.xml</value>
-				<value>com/teamapp/pojo/notification/Notification.hbm.xml</value>
 				<value>com/teamapp/pojo/user/Department.hbm.xml</value>
+				<value>com/teamapp/pojo/notification/Notification.hbm.xml</value>
 				<value>com/teamapp/pojo/project/PTask.hbm.xml</value>
 				<value>com/teamapp/pojo/project/PList.hbm.xml</value>
 			</list>
