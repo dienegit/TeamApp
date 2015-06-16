@@ -20,7 +20,7 @@ public class PTask {
 
 	private Date completedTime;
 
-	private List<User> member;
+	private List<User> members;
 	
 	private int priority;
 
@@ -80,12 +80,12 @@ public class PTask {
 		this.completedTime = completedTime;
 	}
 
-	public List<User> getMember() {
-		return member;
+	public List<User> getMembers() {
+		return members;
 	}
 
-	public void setMember(List<User> member) {
-		this.member = member;
+	public void setMembers(List<User> members) {
+		this.members = members;
 	}
 
 	public int getPriority() {

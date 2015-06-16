@@ -4,16 +4,22 @@
  
 <!-- 最接近惯例的映射方式 -->
 <hibernate-mapping package="com.teamapp.pojo.project">
-	<class name="PTask" table="t_task">
+	<class name="PTask" table="t_ptask">
 		<id name="id" column="task_id">
  			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
 	 	</id>
 	 	<property name="isComplete" column="task_is_complete" length="50" type="boolean" not-null="true" />
 	 	<property name="name" column="task_name" length="50" type="string" not-null="true" />
 	 	<property name="description" column="task_description" length="50" type="string" not-null="true" />
-	 	<property name="createTime" column="user_create_time" length="50" type="date" not-null="true" />
-	 	<property name="deadLine" column="user_deadLine" length="50" type="date" not-null="true" />
-	 	<property name="completedTime" column="user_completed_time" type="date" not-null="true"/>
-	 	<property name="priority" column="user_priority" type="integer"/>
+	 	<property name="createdTime" column="task_created_time" length="50" type="date" not-null="true" />
+	 	<property name="deadLine" column="task_deadline" length="50" type="date" not-null="true" />
+	 	<property name="completedTime" column="task_completed_time" type="date" not-null="true"/>
+	 	<property name="priority" column="task_priority" type="integer"/>
+	 	<!--many to many relation  -->
+	 	<set name="members" table="t_ptask_user" >
+	 		<!-- foreign key -->
+	 		<key column="task_id" />
+	 		<many-to-many class="com.teamapp.pojo.user.User" column="user_id" unique="true" />
+	 	</set>
 	</class>
 </hibernate-mapping>
