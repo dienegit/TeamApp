@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.teamapp.dao.user.IUserDao;
 import com.teamapp.pojo.project.PTask;
@@ -13,6 +14,7 @@ import com.teamapp.service.user.IUserService;
 
 
 @Service
+@Transactional
 public class UserService  implements IUserService {
 	
 	@Resource

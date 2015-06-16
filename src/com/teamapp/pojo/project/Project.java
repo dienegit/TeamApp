@@ -18,8 +18,6 @@ public class Project {
 
 	private String imgPath;
 
-	private User founder;
-
 	private Date createdTime;
 
 	private Date deadLine;
@@ -33,6 +31,8 @@ public class Project {
 	private int maxBudget;
 
 	private String comment;
+
+	private User founder;
 
 	private List<Document> documnets;
 
