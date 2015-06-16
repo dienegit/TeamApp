@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.teamapp.pojo.notification.Notification;
+import com.teamapp.util.FilePath;
 
 public class User {
 
@@ -19,7 +20,7 @@ public class User {
 
 	private String phoneNo;
 
-	private String imgPath;
+	private String imgPath = FilePath.defaultImgPath;
 
 	private List<Organization> organizations;
 

@@ -10,7 +10,7 @@
 	 	</id>
 	 	<property name="isComplete" column="list_is_complete" length="50" type="boolean" not-null="true" />
 	 	<property name="name" column="list_name" length="50" type="string" not-null="true" />
-	 	<property name="description" column="list_description" length="50" type="string" not-null="true" />
+	 	<property name="description" column="list_description" length="50" type="string" />
 	 	<property name="createdTime" column="list_created_time" length="50" type="date" not-null="true" />
 	 	<property name="deadLine" column="list_deadline" length="50" type="date" not-null="true" />
 	 	<property name="completedTime" column="list_completed_time" type="date" not-null="true"/>

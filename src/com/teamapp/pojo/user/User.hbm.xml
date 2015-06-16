@@ -12,9 +12,9 @@
 	 	<property name="password" column="user_password" length="50" type="string" not-null="true" />
 	 	<property name="email" column="user_email" length="100" type="string" not-null="true" />
 	 	<property name="registerTime" column="user_register_time" length="50" type="date" not-null="true" />
-	 	<property name="phoneNo" column="user_phone_number" length="50" type="string"/>
-	 	<property name="imgPath" column="user_img_path" length="100" type="string"/>
-	 	<property name="permission" column="user_permission" length="20" type="string" />
+	 	<property name="phoneNo" column="user_phone_number" length="50" type="string" />
+	 	<property name="imgPath" column="user_img_path" length="100" type="string" not-null="true" />
+	 	<property name="permission" column="user_permission" length="20" type="string" not-null="true" />
 	 	<!--many to many relation  -->
 	 	<set name="organizations" table="t_user_organization" >
 	 		<!-- foreign key -->

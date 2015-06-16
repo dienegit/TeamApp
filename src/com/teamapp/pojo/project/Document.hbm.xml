@@ -12,7 +12,7 @@
 	 	<property name="description" column="document_description" length="50" type="string" not-null="true" />
 	 	<property name="filePath" column="document_file_path" length="50" type="string" not-null="true" />
 	 	<!--many to one relation  -->
-	 	<many-to-one name="uploader" class="com.teamapp.pojo.user.User" column="document_uploader" cascade="all"/>
+	 	<many-to-one name="uploader" class="com.teamapp.pojo.user.User" column="document_uploader" cascade="all" not-null="true" />
 	 	<property name="createdTime" column="document_created_time" length="50" type="date" not-null="true" />
 	</class>
 </hibernate-mapping>

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.teamapp.pojo.user.User;
+import com.teamapp.util.FilePath;
 import com.teamapp.util.Report;
 
 public class Project {
@@ -16,7 +17,7 @@ public class Project {
 
 	private String description;
 
-	private String imgPath;
+	private String imgPath = FilePath.defaultImgPath;
 
 	private Date createdTime;
 
@@ -28,7 +29,7 @@ public class Project {
 
 	private int maxParticipant;
 
-	private int maxBudget;
+	private double maxBudget;
 
 	private String comment;
 
@@ -48,11 +49,11 @@ public class Project {
 		this.id = id;
 	}
 
-	public boolean isComplete() {
+	public boolean getIsComplete() {
 		return isComplete;
 	}
 
-	public void setComplete(boolean isComplete) {
+	public void setIsComplete(boolean isComplete) {
 		this.isComplete = isComplete;
 	}
 
@@ -128,11 +129,11 @@ public class Project {
 		this.maxParticipant = maxParticipant;
 	}
 
-	public int getMaxBudget() {
+	public double getMaxBudget() {
 		return maxBudget;
 	}
 
-	public void setMaxBudget(int maxBudget) {
+	public void setMaxBudget(double maxBudget) {
 		this.maxBudget = maxBudget;
 	}
 

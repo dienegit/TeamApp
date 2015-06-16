@@ -10,7 +10,7 @@
 	 	</id>
 	 	<property name="content" column="discussion_content" length="50" type="string" not-null="true" />
 	 	<!--many to one relation  -->
-	 	<many-to-one name="author" class="com.teamapp.pojo.user.User" column="discussion_author" cascade="all"/>
+	 	<many-to-one name="author" class="com.teamapp.pojo.user.User" column="discussion_author" cascade="all" not-null="true" />
 	 	<property name="createdTime" column="discussion_created_time" length="50" type="date" not-null="true" />
 	</class>
 </hibernate-mapping>

@@ -56,6 +56,10 @@
 				<value>com/teamapp/pojo/notification/Notification.hbm.xml</value>
 				<value>com/teamapp/pojo/project/PTask.hbm.xml</value>
 				<value>com/teamapp/pojo/project/PList.hbm.xml</value>
+				<value>com/teamapp/pojo/project/Project.hbm.xml</value>
+				<value>com/teamapp/pojo/project/Discussion.hbm.xml</value>
+				<value>com/teamapp/pojo/project/Document.hbm.xml</value>
+				<value>com/teamapp/util/Report.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
