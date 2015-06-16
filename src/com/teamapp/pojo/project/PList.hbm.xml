@@ -20,7 +20,7 @@
 	 	<set name="tasks" table="t_plist_ptask" >
 	 		<!-- foreign key -->
 	 		<key column="list_id" />
-	 		<many-to-many class="PTask" column="task_id" unique="true" />
+	 		<many-to-many class="PTask" column="task_id" />
 	 	</set>
 	</class>
 </hibernate-mapping>

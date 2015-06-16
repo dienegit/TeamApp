@@ -19,7 +19,7 @@
 	 	<set name="members" table="t_ptask_user" >
 	 		<!-- foreign key -->
 	 		<key column="task_id" />
-	 		<many-to-many class="com.teamapp.pojo.user.User" column="user_id" unique="true" />
+	 		<many-to-many class="com.teamapp.pojo.user.User" column="user_id" />
 	 	</set>
 	</class>
 </hibernate-mapping>
