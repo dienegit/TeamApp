@@ -1,5 +1,6 @@
 package com.teamapp.service.user.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -88,6 +89,8 @@ public class UserService  implements IUserService {
 
 	@Override
 	public void create(User entity) {
+		entity.setRegisterTime(new Date());
+		entity.setPermission("user");
 		this.userDao.insert(entity);
 		
 	}
@@ -102,6 +105,11 @@ public class UserService  implements IUserService {
 	public boolean delete(User entity) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public User getById(long id) {
+		return this.userDao.getById(id);
 	}
 
 }

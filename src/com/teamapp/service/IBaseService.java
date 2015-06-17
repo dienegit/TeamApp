@@ -6,4 +6,6 @@ public interface IBaseService<T> {
 	boolean modify(T entity);
 
 	boolean delete(T entity);
+	
+	T getById (long id);
 }
