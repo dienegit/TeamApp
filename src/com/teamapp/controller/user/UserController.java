@@ -1,4 +1,4 @@
-package com.teamapp.controller;
+package com.teamapp.controller.user;
 
 import java.util.List;
 

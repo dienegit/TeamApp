@@ -1,10 +1,8 @@
 package com.teamapp.pojo.user;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.teamapp.pojo.notification.Notification;
 import com.teamapp.util.FilePath;
 

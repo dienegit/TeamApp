@@ -13,14 +13,14 @@ import com.teamapp.dao.IBasicDao;
 
 @SuppressWarnings("unchecked")
 @Transactional
-public abstract class BasicDaoImpl<E> implements IBasicDao<E> {
+public abstract class BasicDao<E> implements IBasicDao<E> {
 
 	@Resource
 	private SessionFactory sessionFactory;
 
 	private Class<E> clazz = null; 
 
-	public BasicDaoImpl() {
+	public BasicDao() {
 		// get Class of E by reflection
 		ParameterizedType pt = (ParameterizedType) this.getClass()
 				.getGenericSuperclass(); // 注意这里，子类父类的关系
@@ -31,6 +31,7 @@ public abstract class BasicDaoImpl<E> implements IBasicDao<E> {
 		return this.sessionFactory.getCurrentSession();
 	}
 
+	@Override
 	public boolean insert(E t) {
 		this.getSession().save(t);
 		return true;

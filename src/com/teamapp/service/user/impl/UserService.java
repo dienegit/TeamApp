@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.DigestUtils;
 
 import com.teamapp.dao.user.IUserDao;
 import com.teamapp.pojo.project.PTask;
@@ -16,7 +17,7 @@ import com.teamapp.service.user.IUserService;
 
 @Service
 @Transactional
-public class UserService  implements IUserService {
+public class UserService implements IUserService {
 	
 	@Resource
 	private IUserDao userDao;
@@ -110,6 +111,12 @@ public class UserService  implements IUserService {
 	@Override
 	public User getById(long id) {
 		return this.userDao.getById(id);
+	}
+
+	@Override
+	public User getByEmailAndPassword(String email, String password) {
+		//password = DigestUtils.md5DigestAsHex(password.getBytes("UTF-8"));
+		return this.userDao.getByEmailAndPassword(email, password);
 	}
 
 }

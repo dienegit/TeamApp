@@ -27,4 +27,6 @@ public interface IUserService extends IBaseService<User>{
 	List<PTask> getAllTodoTasks(User user);
 	
 	List<User> getAllUsers();
+
+	User getByEmailAndPassword(String email, String password);
 }
