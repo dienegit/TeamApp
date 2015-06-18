@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,15 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import com.teamapp.dao.user.IUserDao;
-import com.teamapp.dao.user.impl.UserDao;
 import com.teamapp.pojo.user.User;
 import com.teamapp.service.user.IUserService;
 
 @Controller
 @RequestMapping(value="/user")
-@Scope("prototype")
 public class UserController {
 	
 	@Resource
@@ -36,10 +31,6 @@ public class UserController {
 
 	public UserController() {
 		
-	}
-	@RequestMapping(value="", method=RequestMethod.GET) 
-	public String list() {
-		return "redirect:/user/";
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
