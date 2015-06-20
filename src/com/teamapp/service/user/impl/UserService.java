@@ -7,8 +7,6 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.DigestUtils;
-
 import com.teamapp.dao.user.IUserDao;
 import com.teamapp.pojo.project.PTask;
 import com.teamapp.pojo.user.User;

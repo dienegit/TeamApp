@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
+ 
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.teamapp.pojo.user.User;
 import com.teamapp.service.user.IUserService;
+
 
 @Controller
 @RequestMapping(value = "/user")
@@ -35,7 +38,8 @@ public class UserController {
 	public UserController() {
 
 	}
-
+	
+	@JsonView(com.teamapp.view.Views.BaseUser.class)
 	@RequestMapping(value = "/test.json", method = RequestMethod.GET, produces = {
 			"application/xml", "application/json" })
 	@ResponseStatus(HttpStatus.OK)

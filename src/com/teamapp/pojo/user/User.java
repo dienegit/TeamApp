@@ -3,17 +3,19 @@ package com.teamapp.pojo.user;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.teamapp.pojo.notification.Notification;
 import com.teamapp.util.FilePath;
 
 public class User {
-
+	@JsonView(com.teamapp.view.Views.BaseUser.class)
 	private long id;
-
+	@JsonView(com.teamapp.view.Views.BaseUser.class)
 	private String name;
 
 	private String password;
-
+	@JsonView(com.teamapp.view.Views.BaseUser.class)
 	private String email;
 
 	private Date registerTime;
@@ -21,9 +23,9 @@ public class User {
 	private String phoneNo;
 
 	private String imgPath = FilePath.defaultImgPath;
-
+	@JsonIgnore
 	private List<Organization> organizations;
-
+	@JsonIgnore
 	private List<Notification> notifications;
 
 	private String permission;

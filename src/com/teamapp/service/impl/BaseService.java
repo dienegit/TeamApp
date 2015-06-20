@@ -1,9 +1,13 @@
 package com.teamapp.service.impl;
 
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
+
 import com.teamapp.dao.user.IOrganizationDao;
 import com.teamapp.dao.user.IUserDao;
 import com.teamapp.service.IBaseService;
-
+@Transactional
+@Service
 public class BaseService<T> implements IBaseService<T> {
 	protected IUserDao userDao;
 	protected IOrganizationDao organizationDao;
