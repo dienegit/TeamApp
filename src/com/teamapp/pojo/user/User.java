@@ -24,9 +24,14 @@ public class User {
 
 	private List<Organization> organizations;
 
-	private List<Notification> notifications; 
+	private List<Notification> notifications;
 
 	private String permission;
+
+	@Override
+	public String toString() {
+		return "User" + this.name;
+	}
 
 	public long getId() {
 		return id;
