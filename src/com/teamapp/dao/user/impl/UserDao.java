@@ -13,7 +13,7 @@ public class UserDao extends BasicDao<User> implements IUserDao {
 
 	@Override
 	public User getByEmailAndPassword(String email, String password) {
-		return (User)getSession().createQuery(//
+		return (User) getSession().createQuery(//
 				"FROM User u WHERE u.email=? AND u.password=?")//
 				.setParameter(0, email)//
 				.setParameter(1, password)//

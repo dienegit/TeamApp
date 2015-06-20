@@ -16,12 +16,12 @@ public interface IProjectService extends IBaseService<Project> {
 	int[] getProjectProgress(Project project);// 12/75
 
 	List<PTask> getPTasks(Project project);
-	
+
 	List<User> getMembers(Project project);
 
 	boolean isDelayed(Project project);
-	
+
 	boolean isMember(Project project, User user);
-	
+
 	boolean isMember(int projectId, int userId);
 }

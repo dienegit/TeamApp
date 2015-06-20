@@ -8,12 +8,12 @@ public interface IBasicDao<T> {
 	boolean update(T t);
 
 	boolean delete(T t);
-	
+
 	List<T> findAll();
-	
-	T getById (long id);
-	
-	List<T> getByIds (Long[] id);
-	
+
+	T getById(long id);
+
+	List<T> getByIds(Long[] id);
+
 	boolean deleteById(Long id);
 }

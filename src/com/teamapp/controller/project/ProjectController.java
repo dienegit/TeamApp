@@ -6,38 +6,36 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.teamapp.pojo.user.User;
-import com.teamapp.service.user.IUserService;
+import com.teamapp.pojo.project.Project;
+import com.teamapp.service.project.IProjectService;
 
 @Controller
-@RequestMapping(value="/project")
+@RequestMapping(value = "/project")
 public class ProjectController {
-	
-//	@Resource
-//	private IUserService userService;
-//
-//	public IUserService getUserService() {
-//		return userService;
-//	}
-//
-//	public void setUserService(IUserService userService) {
-//		this.userService = userService;
-//	}
-//
-//	public ProjectController() {
-//		
-//	}
-	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+
+	@Resource
+	private IProjectService projectService;
+
+	public IProjectService getProjectService() {
+		return projectService;
+	}
+
+	public void setProjectService(IProjectService projectService) {
+		this.projectService = projectService;
+	}
+
+	public ProjectController() {
+
+	}
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String list(Model model) {
-//		List<User> users = this.userService.getAllUsers();
-//		model.addAttribute("users", users);
+		List<Project> projects = this.projectService.getAll();
+		model.addAttribute("projects", projects);
 		return "project/list";
 	}
-	
+
 }

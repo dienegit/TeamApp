@@ -11,6 +11,6 @@ public interface IPTaskService extends IBaseService<PTask> {
 	PTask getPTaskById(int id);
 
 	List<User> getMembers(Project project);
-	
+
 	boolean isDelayed(PTask ptask);
 }

@@ -18,30 +18,30 @@ public class LoginFilter implements Filter {
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		
+
 		HttpServletRequest hsRequest = (HttpServletRequest) request;
 		HttpServletResponse hsResponse = (HttpServletResponse) response;
-		
-		User u = (User)hsRequest.getSession().getAttribute("loginUser");
-		
+
+		User u = (User) hsRequest.getSession().getAttribute("loginUser");
+
 		if (u == null) {
 			hsResponse.sendRedirect(hsRequest.getContextPath() + "/login");
 		} else {
 			chain.doFilter(request, response);
 		}
-		
+
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

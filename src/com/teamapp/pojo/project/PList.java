@@ -17,7 +17,7 @@ public class PList {
 	private Date createdTime;
 
 	private Date deadLine;
-	
+
 	private Date completedTime;
 
 	private User leader;
@@ -96,5 +96,4 @@ public class PList {
 		this.tasks = tasks;
 	}
 
-	
 }

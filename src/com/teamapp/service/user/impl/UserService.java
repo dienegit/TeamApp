@@ -7,25 +7,23 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.DigestUtils;
 
 import com.teamapp.dao.user.IUserDao;
 import com.teamapp.pojo.project.PTask;
 import com.teamapp.pojo.user.User;
 import com.teamapp.service.user.IUserService;
 
-
 @Service
 @Transactional
 public class UserService implements IUserService {
-	
+
 	@Resource
 	private IUserDao userDao;
-	
+
 	public IUserDao getUserDao() {
 		return userDao;
 	}
-	
+
 	public void setUserDao(IUserDao userDao) {
 		this.userDao = userDao;
 	}
@@ -84,7 +82,7 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public List<User> getAllUsers() {
+	public List<User> getAll() {
 		return this.userDao.findAll();
 	}
 
@@ -93,7 +91,7 @@ public class UserService implements IUserService {
 		entity.setRegisterTime(new Date());
 		entity.setPermission("user");
 		this.userDao.insert(entity);
-		
+
 	}
 
 	@Override
@@ -115,7 +113,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public User getByEmailAndPassword(String email, String password) {
-		//password = DigestUtils.md5DigestAsHex(password.getBytes("UTF-8"));
+		// password = DigestUtils.md5DigestAsHex(password.getBytes("UTF-8"));
 		return this.userDao.getByEmailAndPassword(email, password);
 	}
 

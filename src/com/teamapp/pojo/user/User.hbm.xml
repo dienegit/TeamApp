@@ -16,14 +16,14 @@
 	 	<property name="imgPath" column="user_img_path" length="100" type="string" not-null="true" />
 	 	<property name="permission" column="user_permission" length="20" type="string" not-null="true" />
 	 	<!--many to many relation  -->
-	 	<list name="organizations" table="t_user_organization">
+	 	<list name="organizations" table="t_user_organization" >
 	 		<!-- foreign key -->
 	 		<key column="user_id" />
 	 		<list-index column="sortOrder" />
 	 		<many-to-many class="Organization" column="organization_id" unique="true" />
 	 	</list>
 	 	<!--one to many relation  -->
-	 	<list name="notifications" table="t_user_notification" >
+	 	<list name="notifications" table="t_user_notification"  >
 	 		<!-- foreign key -->
 	 		<key column="user_id" />
 	 		<list-index column="sortOrder" />

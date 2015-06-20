@@ -1,6 +1,6 @@
 package com.teamapp.util;
 
-public class Report{
+public class Report {
 	private long id;
 
 	public long getId() {
@@ -10,5 +10,5 @@ public class Report{
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 }

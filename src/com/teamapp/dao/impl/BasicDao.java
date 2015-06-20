@@ -18,13 +18,13 @@ public abstract class BasicDao<E> implements IBasicDao<E> {
 	@Resource
 	private SessionFactory sessionFactory;
 
-	private Class<E> clazz = null; 
+	private Class<E> clazz = null;
 
 	public BasicDao() {
 		// get Class of E by reflection
 		ParameterizedType pt = (ParameterizedType) this.getClass()
 				.getGenericSuperclass(); // 注意这里，子类父类的关系
-		this.clazz = (Class<E>) pt.getActualTypeArguments()[0];//取得是类型参数 E，就一个
+		this.clazz = (Class<E>) pt.getActualTypeArguments()[0];// 取得是类型参数 E，就一个
 	}
 
 	protected Session getSession() {

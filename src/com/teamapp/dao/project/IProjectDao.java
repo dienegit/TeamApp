@@ -1,5 +1,8 @@
 package com.teamapp.dao.project;
 
-public interface IProjectDao {
+import com.teamapp.dao.IBasicDao;
+import com.teamapp.pojo.project.Project;
+
+public interface IProjectDao extends IBasicDao<Project> {
 
 }

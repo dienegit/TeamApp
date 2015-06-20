@@ -19,7 +19,7 @@ import com.teamapp.util.UserException;
 @Controller
 @SessionAttributes("loginUser")
 public class LoginController {
-	
+
 	@Resource
 	private IUserService userService;
 
@@ -32,15 +32,15 @@ public class LoginController {
 	}
 
 	public LoginController() {
-		
+
 	}
-	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(@ModelAttribute("user") User user) {
 		return "login";
 	}
 
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(String email, String password, Model model) {
 		User u = this.userService.getByEmailAndPassword(email, password);
 		if (u == null) {
@@ -49,17 +49,17 @@ public class LoginController {
 		model.addAttribute("loginUser", u);
 		return "redirect:/project";
 	}
-	
-	@RequestMapping(value="/logout", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpSession session) {
 		model.asMap().remove("loginUser");
 		session.invalidate();
 		return "redirect:/login";
 	}
-	
-	@ExceptionHandler(UserException.class)  
-    public String handlerException(Exception ex,HttpServletRequest req){  
-        req.setAttribute("ex", ex);  
-        return "error";  
-    }  
+
+	@ExceptionHandler(UserException.class)
+	public String handlerException(Exception ex, HttpServletRequest req) {
+		req.setAttribute("ex", ex);
+		return "error";
+	}
 }
