@@ -1,15 +1,20 @@
-<%@ page language="java" pageEncoding="UTF-8" session="false"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta charset="utf-8">
 <title>List User</title>
 </head>
 <body>
-	<a href="add">add</a><br />
+	<a href="user/add">add</a><br />
 	<c:forEach items="${users }" var="um">
-    	<a href="${um.id }">${um.id }    ${um.name }</a><br />
+    	<a href="user/${um.id }">${um.id }    ${um.name }</a><br />
 
 	</c:forEach>
 </body>

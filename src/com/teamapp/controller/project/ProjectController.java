@@ -3,13 +3,17 @@ package com.teamapp.controller.project;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.teamapp.pojo.project.Project;
+import com.teamapp.pojo.user.User;
 import com.teamapp.service.project.IProjectService;
 
 @Controller
@@ -37,5 +41,16 @@ public class ProjectController {
 		model.addAttribute("projects", projects);
 		return "project/list";
 	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public String add(@ModelAttribute("project") Project project, Model model, HttpSession session) {
+		model.addAttribute("user", session.getAttribute("loginUser"));
+		return "project/add";
+	}
 
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String add(Project project) {
+		this.projectService.create(project);
+		return "redirect:/project/";
+	}
 }
