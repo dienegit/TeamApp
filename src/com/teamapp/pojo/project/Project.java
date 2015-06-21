@@ -3,6 +3,8 @@ package com.teamapp.pojo.project;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.teamapp.pojo.user.User;
 import com.teamapp.util.FilePath;
 import com.teamapp.util.Report;
@@ -21,8 +23,10 @@ public class Project {
 
 	private Date createdTime;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date deadLine;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startTime;
 
 	private Date completedTime;
@@ -35,7 +39,7 @@ public class Project {
 
 	private User founder;
 
-	private List<Document> documnets;
+	private List<Document> documents;
 
 	private List<Discussion> discussions;
 
@@ -145,12 +149,12 @@ public class Project {
 		this.comment = comment;
 	}
 
-	public List<Document> getDocumnets() {
-		return documnets;
+	public List<Document> getDocuments() {
+		return documents;
 	}
 
-	public void setDocumnets(List<Document> documnets) {
-		this.documnets = documnets;
+	public void setDocuments(List<Document> documents) {
+		this.documents = documents;
 	}
 
 	public List<Discussion> getDiscussions() {

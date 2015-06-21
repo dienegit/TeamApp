@@ -7,8 +7,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,6 +34,11 @@ public class ProjectController {
 	public ProjectController() {
 
 	}
+	
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String list() {
+		return "redirect:/project/";
+	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String list(Model model) {
@@ -44,7 +49,8 @@ public class ProjectController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add(@ModelAttribute("project") Project project, Model model, HttpSession session) {
-		model.addAttribute("user", session.getAttribute("loginUser"));
+		project.setFounder((User)session.getAttribute("loginUser"));
+		//model.addAttribute("user", session.getAttribute("loginUser"));
 		return "project/add";
 	}
 
@@ -52,5 +58,11 @@ public class ProjectController {
 	public String add(Project project) {
 		this.projectService.create(project);
 		return "redirect:/project/";
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public String show(@PathVariable long id, Model model) {
+		model.addAttribute(this.projectService.getById(id));
+		return "project/show";
 	}
 }

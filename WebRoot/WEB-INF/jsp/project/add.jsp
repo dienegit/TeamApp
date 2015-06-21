@@ -12,7 +12,7 @@
 <head>
 <base href="<%=basePath%>">
 <meta charset="UTF-8">
-<title>user login</title>
+<title>add project</title>
 </head>
 
 <body>
@@ -20,51 +20,50 @@
 		<a href="project">all projects</a>
 	</p>
 	<p>&nbsp;</p>
-	<sf:form method="post" modelAttribute="project" action="project/add/">
+	<sf:form method="post" modelAttribute="project">
 		<table width="826" height="479" border="1">
 			<tr>
 				<td width="255" height="203"><p>
-						<img src="../../../img/004.png" width="171" height="162" alt="" />
+						<img src="style/img/004.png" width="171" height="162" alt="" />
 					</p>
 					<p>&nbsp;</p></td>
-				<td colspan="2"><br> <textarea style="width:100%;"
-						rows="7" name="textarea"></textarea></td>
+				<td colspan="2">项目名称：<br><sf:input path="name" value="default project"/><br>
+				<br>介绍：<br> <sf:textarea path="description" rows="7" style="width:100%;" /></td>
 			</tr>
 			<tr>
 				<td><div align="center">创建者</div></td>
-				<td colspan="2"><div align="center">${user.name}</div></td>
+				<td colspan="2"><div align="center">${project.founder.name}</div></td>
 			</tr>
-			
+			<tr>
+				<td><div align="center">起始时间</div></td>
+				<td colspan="2"><div align="center"></div>
+					<div align="center"><sf:input type="date" path="startTime" /></div></td>
+			</tr>
 			<tr>
 				<td><div align="center">截止时间</div></td>
 				<td colspan="2"><div align="center"></div>
-					<div align="center"><sf:input type="date" path="deadLine"></sf:input></div></td>
-			</tr>
-			<tr>
-				<td><div align="center">完成时间</div></td>
-				<td colspan="2"><div align="center"></div>
-					<div align="center"></div></td>
+					<div align="center"><sf:input type="date" path="deadLine" /></div></td>
 			</tr>
 			<tr>
 				<td><div align="center">活动人数</div></td>
 				<td colspan="2"><div align="center"></div>
-					<div align="center"></div></td>
+					<div align="center"><sf:input path="maxParticipant" /></div></td>
 			</tr>
 			<tr>
 				<td><div align="center">预算规模</div></td>
 				<td colspan="2"><div align="center"></div>
-					<div align="center"></div></td>
+					<div align="center"><sf:input path="maxBudget" /></div></td>
 			</tr>
 
 			<tr>
 				<td><div align="center">项目备注</div></td>
 				<td colspan="2"><div align="center"></div>
-					<div align="center"></div></td>
+					<div align="center"><sf:input path="comment" /></div></td>
 			</tr>
 			<tr>
 				<td colspan="3"><button type="reset">reset</button>
 					&nbsp;&nbsp;&nbsp;
-					<button type="submit">submit</button>
+					<input type="submit" value="submit" />
 				</td>
 			</tr>
 		</table>

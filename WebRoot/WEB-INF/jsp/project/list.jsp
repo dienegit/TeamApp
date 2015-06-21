@@ -18,10 +18,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <c:forEach items="${projects}" var="project">
 <table width="200" height="200" border="1" style="float:left; margin-right:20px;">
   <tr>
-    <td><a href="id/lists/list.html">${project.name}</a>&nbsp;&nbsp;&nbsp;<a href="id/show.html">&lt;i&gt;</a>  </td>
+    <td><a href="id/lists/list.html">${project.name}</a>&nbsp;&nbsp;&nbsp;<a href="project/${project.id }">&lt;i&gt;</a>  </td>
   </tr>
   <tr>
-    <td>${project.progress}</td>
+    <td>TODO: progess</td>
   </tr>
   <tr>
     <td>************--------------</td>

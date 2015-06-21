@@ -33,6 +33,11 @@ public class UserController {
 
 	}
 
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String list() {
+		return "redirect:/user/";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<User> users = this.userService.getAll();

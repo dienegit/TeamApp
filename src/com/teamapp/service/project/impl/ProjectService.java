@@ -1,5 +1,6 @@
 package com.teamapp.service.project.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -22,7 +23,8 @@ public class ProjectService implements IProjectService {
 
 	@Override
 	public void create(Project entity) {
-		// TODO Auto-generated method stub
+		entity.setCreatedTime(new Date());
+		this.projectDao.insert(entity);
 
 	}
 
@@ -40,8 +42,7 @@ public class ProjectService implements IProjectService {
 
 	@Override
 	public Project getById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.projectDao.getById(id);
 	}
 
 	@Override
