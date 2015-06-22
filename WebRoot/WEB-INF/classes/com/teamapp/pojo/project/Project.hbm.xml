@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<!-- 最接近惯例的映射方式 -->
+<hibernate-mapping package="com.teamapp.pojo.project">
+	<class name="Project" table="t_project">
+		<id name="id" column="project_id">
+ 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
+	 	</id>
+	 	<property name="isComplete" column="project_is_complete" length="50" type="boolean" not-null="true" />
+	 	<property name="name" column="project_name" length="50" type="string" not-null="true" />
+	 	<property name="description" column="project_description" length="50" type="string" />
+	 	<property name="imgPath" column="project_img_path" length="50" type="string" not-null="true" />
+	 	<property name="createdTime" column="project_created_time" length="50" type="date" not-null="true" />
+	 	<property name="deadLine" column="project_deadline" length="50" type="date" not-null="true" />
+	 	<property name="startTime" column="project_start_time" length="50" type="date" not-null="true" />
+	 	<property name="completedTime" column="project_completed_time" type="date" />
+	 	<property name="maxParticipant" column="project_max_participant" type="integer" />
+	 	<property name="maxBudget" column="project_max_budget" type="double" />
+	 	<property name="comment" column="project_comment" length="500" type="text" />
+	 	<many-to-one name="founder" cascade="all" unique-key="true" column="project_founder" class="com.teamapp.pojo.user.User"></many-to-one>
+	 	<!-- one to many -->
+	 	<list name="documents">
+	 		<!-- foreign key, no joint table -->
+	 		<key column="project_documents" />
+	 		<list-index column="sortOrder" />
+	 		<one-to-many class="Document" />
+	 	</list>
+	 	<!-- one to many -->
+	 	<list name="discussions">
+	 		<!-- foreign key -->
+	 		<key column="project_discussions" />
+	 		<list-index column="sortOrder" />
+	 		<one-to-many class="Discussion" />
+	 	</list>
+	 	<!-- one to many -->
+	 	<list name="reports">
+	 		<!-- foreign key -->
+	 		<key column="project_reports" />
+	 		<list-index column="sortOrder" />
+	 		<one-to-many class="com.teamapp.util.Report" />
+	 	</list>
+	</class>
+</hibernate-mapping>
