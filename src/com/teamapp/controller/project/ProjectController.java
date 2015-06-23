@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,7 +57,10 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(Project project) {
+	public String add(@Validated Project project, BindingResult br) {
+		if (br.hasErrors()) {
+			return "project/add";
+		}
 		this.projectService.create(project);
 		return "redirect:/project/";
 	}

@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
- 
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <!-- 最接近惯例的映射方式 -->
 <hibernate-mapping package="com.teamapp.pojo.notification">
 	<class name="Notification" table="t_notification">
 		<id name="id" column="notification_id">
- 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
-	 	</id>
-	 	<property name="name" column="notification_name" length="50" type="string" not-null="true" />
-	 	<property name="type" column="notification_type" length="50" type="string" not-null="true" />
-	 	<property name="url" column="notification_url" length="500" type="string" not-null="true" />
-	 	<property name="time" column="notification_time" length="100" type="date" not-null="true" />
-	 	<property name="isRead" column="notification_isRead" type="boolean" not-null="true" />
-	 	
+			<generator class="identity" /><!-- 注意这里的生成方式p470 -->
+		</id>
+		<property name="name" column="notification_name" length="50"
+			type="string" not-null="true" />
+		<property name="type" column="notification_type" length="50"
+			type="string" not-null="true" />
+		<property name="url" column="notification_url" length="500"
+			type="string" not-null="true" />
+		<property name="time" column="notification_time" length="100"
+			type="date" not-null="true" />
+		<property name="isRead" column="notification_isRead" type="boolean"
+			not-null="true" />
+
 	</class>
 </hibernate-mapping>

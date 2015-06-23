@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
- 
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <!-- 最接近惯例的映射方式 -->
 <hibernate-mapping package="com.teamapp.pojo.user">
 	<class name="Department" table="t_department">
 		<id name="id" column="department_id">
- 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
-	 	</id>
-	 	<property name="name" column="department_name" length="50" type="string" not-null="true" />
-	 	<property name="description" column="department_description" length="500" type="string" />
-	 	<property name="createdTime" column="department_created_time" length="100" type="date" not-null="true" />
-	 	<!--many to one relation  -->
-	 	<many-to-one name="leader" class="User" column="department_leader" cascade="all" not-null="true" />
-	 	<!--many to many relation  -->
-	 	<set name="members" table="t_department_user" >
-	 		<!-- foreign key -->
-	 		<key column="department_id" />
-	 		<many-to-many class="User" column="user_id"  />
-	 	</set>
+			<generator class="identity" /><!-- 注意这里的生成方式p470 -->
+		</id>
+		<property name="name" column="department_name" length="50"
+			type="string" not-null="true" />
+		<property name="description" column="department_description"
+			length="500" type="string" />
+		<property name="createdTime" column="department_created_time"
+			length="100" type="date" not-null="true" />
+		<!--many to one relation -->
+		<many-to-one name="leader" class="User" column="department_leader"
+			cascade="all" not-null="true" />
+		<!--many to many relation -->
+		<set name="members" table="t_department_user">
+			<!-- foreign key -->
+			<key column="department_id" />
+			<many-to-many class="User" column="user_id" />
+		</set>
 	</class>
 </hibernate-mapping>

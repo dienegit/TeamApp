@@ -3,6 +3,12 @@ package com.teamapp.pojo.user;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.teamapp.pojo.notification.Notification;
@@ -11,11 +17,16 @@ import com.teamapp.util.FilePath;
 public class User {
 	@JsonView(com.teamapp.view.Views.BaseUser.class)
 	private long id;
+	
 	@JsonView(com.teamapp.view.Views.BaseUser.class)
+	@NotBlank
 	private String name;
 
+	@Size(min=3, max=20)
 	private String password;
+	
 	@JsonView(com.teamapp.view.Views.BaseUser.class)
+	@NotBlank @Email
 	private String email;
 
 	private Date registerTime;
@@ -23,8 +34,10 @@ public class User {
 	private String phoneNo;
 
 	private String imgPath = FilePath.defaultImgPath;
+	
 	@JsonIgnore
 	private List<Organization> organizations;
+	
 	@JsonIgnore
 	private List<Notification> notifications;
 

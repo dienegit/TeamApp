@@ -3,6 +3,10 @@ package com.teamapp.pojo.project;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.teamapp.pojo.user.User;
@@ -15,6 +19,7 @@ public class Project {
 
 	private boolean isComplete;
 
+	@NotBlank(message="project name should not be blank.")
 	private String name;
 
 	private String description;
@@ -23,9 +28,12 @@ public class Project {
 
 	private Date createdTime;
 
+	@NotNull(message="deadline should not be empty.")
+	@Future(message="deadline should be in the future.")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date deadLine;
 
+	@NotNull(message="start date should not be empty.")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startTime;
 

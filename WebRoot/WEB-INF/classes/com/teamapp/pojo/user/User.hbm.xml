@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
- 
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <!-- 最接近惯例的映射方式 -->
 <hibernate-mapping package="com.teamapp.pojo.user">
 	<class name="User" table="t_user">
 		<id name="id" column="user_id">
- 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
-	 	</id>
-	 	<property name="name" column="user_name" length="50" type="string" not-null="true" />
-	 	<property name="password" column="user_password" length="50" type="string" not-null="true" />
-	 	<property name="email" column="user_email" length="100" type="string" not-null="true" />
-	 	<property name="registerTime" column="user_register_time" length="50" type="date" not-null="true" />
-	 	<property name="phoneNo" column="user_phone_number" length="50" type="string" />
-	 	<property name="imgPath" column="user_img_path" length="100" type="string" not-null="true" />
-	 	<property name="permission" column="user_permission" length="20" type="string" not-null="true" />
-	 	<!--many to many relation  -->
-	 	<list name="organizations" table="t_user_organization" >
-	 		<!-- foreign key -->
-	 		<key column="user_id" />
-	 		<list-index column="sortOrder" />
-	 		<many-to-many class="Organization" column="organization_id" unique="true" />
-	 	</list>
-	 	<!--one to many relation  -->
-	 	<list name="notifications" table="t_user_notification"  >
-	 		<!-- foreign key -->
-	 		<key column="user_id" />
-	 		<list-index column="sortOrder" />
-	 		<many-to-many class="com.teamapp.pojo.notification.Notification" column="notification_id" unique="true" />
-	 	</list>
-	 	
+			<generator class="identity" /><!-- 注意这里的生成方式p470 -->
+		</id>
+		<property name="name" column="user_name" length="50" type="string"
+			not-null="true" />
+		<property name="password" column="user_password" length="50"
+			type="string" not-null="true" />
+		<property name="email" column="user_email" length="100" type="string"
+			not-null="true" />
+		<property name="registerTime" column="user_register_time"
+			length="50" type="date" not-null="true" />
+		<property name="phoneNo" column="user_phone_number" length="50"
+			type="string" />
+		<property name="imgPath" column="user_img_path" length="100"
+			type="string" not-null="true" />
+		<property name="permission" column="user_permission" length="20"
+			type="string" not-null="true" />
+		<!--many to many relation -->
+		<list name="organizations" table="t_user_organization">
+			<!-- foreign key -->
+			<key column="user_id" />
+			<list-index column="sortOrder" />
+			<many-to-many class="Organization" column="organization_id"
+				unique="true" />
+		</list>
+		<!--one to many relation -->
+		<list name="notifications" table="t_user_notification">
+			<!-- foreign key -->
+			<key column="user_id" />
+			<list-index column="sortOrder" />
+			<many-to-many class="com.teamapp.pojo.notification.Notification"
+				column="notification_id" unique="true" />
+		</list>
+
 	</class>
 </hibernate-mapping>

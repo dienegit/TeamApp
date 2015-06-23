@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
- 
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <!-- 最接近惯例的映射方式 -->
 <hibernate-mapping package="com.teamapp.pojo.project">
 	<class name="Discussion" table="t_discussion">
 		<id name="id" column="discussion_id">
- 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
-	 	</id>
-	 	<property name="content" column="discussion_content" length="50" type="string" not-null="true" />
-	 	<!--many to one relation  -->
-	 	<many-to-one name="author" class="com.teamapp.pojo.user.User" column="discussion_author" cascade="all" not-null="true" />
-	 	<property name="createdTime" column="discussion_created_time" length="50" type="date" not-null="true" />
+			<generator class="identity" /><!-- 注意这里的生成方式p470 -->
+		</id>
+		<property name="content" column="discussion_content" length="50"
+			type="string" not-null="true" />
+		<!--many to one relation -->
+		<many-to-one name="author" class="com.teamapp.pojo.user.User"
+			column="discussion_author" cascade="all" not-null="true" />
+		<property name="createdTime" column="discussion_created_time"
+			length="50" type="date" not-null="true" />
 	</class>
 </hibernate-mapping>

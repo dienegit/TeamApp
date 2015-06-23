@@ -3,9 +3,12 @@ package com.teamapp.controller.user;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,7 +54,10 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(User user, String s) {
+	public String add(@Validated User user, BindingResult br) {
+		if (br.hasErrors()) {
+			return "user/add";
+		}
 		this.userService.create(user);
 		return "redirect:/user/";
 	}

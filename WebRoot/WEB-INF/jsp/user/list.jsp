@@ -12,9 +12,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>List User</title>
 </head>
 <body>
-	<a href="user/add">add</a><br />
+	<a href="user/add">add</a>
+	<br />
 	<c:forEach items="${users }" var="um">
-    	<a href="user/${um.id }">${um.id }    ${um.name }</a><br />
+		<a href="user/${um.id }">${um.id } ${um.name }</a>
+		<br />
 
 	</c:forEach>
 </body>

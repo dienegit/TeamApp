@@ -81,10 +81,9 @@
 
 	<!-- 4. Auto scan and define bean -->
 	<context:component-scan base-package="com.teamapp"></context:component-scan>
-	
+
 	<!-- 4. Configure Data access object -->
-	<!-- <bean id="userDao" class="com.teamapp.dao.impl.user.UserDao">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean> -->
+	<!-- <bean id="userDao" class="com.teamapp.dao.impl.user.UserDao"> <property 
+		name="sessionFactory" ref="sessionFactory" /> </bean> -->
 
 </beans>

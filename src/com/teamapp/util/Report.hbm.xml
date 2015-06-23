@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
- 
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <!-- 最接近惯例的映射方式 -->
 <hibernate-mapping package="com.teamapp.util">
 	<class name="Report" table="t_report">
 		<id name="id" column="report_id">
- 			<generator class="identity"/><!-- 注意这里的生成方式p470 -->
-	 	</id>
+			<generator class="identity" /><!-- 注意这里的生成方式p470 -->
+		</id>
 	</class>
 </hibernate-mapping>
