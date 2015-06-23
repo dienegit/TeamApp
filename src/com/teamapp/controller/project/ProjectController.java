@@ -50,15 +50,15 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String add(@ModelAttribute("project") Project project, Model model, HttpSession session) {
+	public String add(@ModelAttribute("project") Project project, HttpSession session) {
 		project.setFounder((User)session.getAttribute("loginUser"));
-		//model.addAttribute("user", session.getAttribute("loginUser"));
 		return "project/add";
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(@Validated Project project, BindingResult br) {
+	public String add(@Validated Project project, BindingResult br, HttpSession session) {
 		if (br.hasErrors()) {
+			project.setFounder((User)session.getAttribute("loginUser"));
 			return "project/add";
 		}
 		this.projectService.create(project);
